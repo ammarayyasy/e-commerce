@@ -11,7 +11,7 @@ class FrontController extends Controller
     public function index()
     {
         $kategoris = Kategori::all();
-        $barangs = Barang::latest();
+        $barangs = Barang::latest()->where('stok', '>', 0);
 
         if(request('search')) {
             $barangs = $barangs->where('name', 'like', '%' . request('search') . '%');
@@ -28,6 +28,11 @@ class FrontController extends Controller
         $kategoris = Kategori::all();
         $barangs = $kategori->barangs;
         return view('index', compact('kategoris', 'barangs'));
+    }
+
+    public function detail(Barang $barang)
+    {
+        return view('detail-barang', compact('barang'));
     }
 
 }

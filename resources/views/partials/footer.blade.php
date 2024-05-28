@@ -9,6 +9,6 @@
 
         <h4>No. Hp</h4>
         <p>081399808859</p>
-        <small>Copyright &copy; 2022 - Warungbuku.</small>
+        <small>Copyright &copy; 2024 - Warungonline.</small>
     </div>
 </div>

@@ -19,4 +19,9 @@ class Pelanggan extends Authenticatable implements AuthenticatableContract
     {
         return $this->hasOne(Rekening::class, 'id_pelanggan');
     }
+
+    public function transaksis()
+    {
+        return $this->hasMany(Transaksi::class, 'id_pelanggan');
+    }
 }

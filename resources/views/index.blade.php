@@ -34,9 +34,15 @@
             <h3>Buku Terbaru</h3>
             <div class="box">
                 @foreach ($barangs as $barang)
-                    <a href="#">
+                    <a href="{{ route('detail', $barang) }}">
                         <div class="col-4">
-                            <img src="https://picsum.photos/300/300" alt="">
+                            <div class="image-container">
+                                @if ($barang->image)
+                                    <img src="{{ asset('storage/' . $barang->image) }}" alt="">
+                                @else
+                                    <img src="{{ asset('image/shopping.png') }}" alt="">
+                                @endif
+                            </div>
                             <p class="nama">{{ $barang->name }}</p>
                             <p class="harga">Rp. {{ $barang->harga }}</p>
                         </div>

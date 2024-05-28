@@ -1,8 +1,13 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\RekeningController;
+use Database\Seeders\KategoriSeeder;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +22,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FrontController::class, 'index'])->name('home');
+Route::get('/detail/{barang}', [FrontController::class, 'detail'])->name('detail');
 Route::get('/kategori/{kategori}', [FrontController::class, 'kategori'])->name('kategori');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/dashboard/pelanggan', PelangganController::class);
+    Route::resource('/dashboard/rekening', RekeningController::class);
+    Route::resource('/dashboard/kategori', KategoriController::class);
+    Route::resource('/dashboard/barang', BarangController::class);
+});

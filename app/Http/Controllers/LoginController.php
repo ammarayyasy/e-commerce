@@ -16,12 +16,18 @@ class LoginController extends Controller
     {
         $credentials = $request->validate([
             'username' => 'required',
-            'password' => 'required '
+            'password' => 'required'
         ]);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+
+            // Cek peran pengguna
+            if (Auth::user()->role == 1) {
+                return redirect()->intended('/dashboard');
+            } else {
+                return redirect()->intended('/');
+            }
         }
         
         return back()->with('loginError', 'Login failed!');
