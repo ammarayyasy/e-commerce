@@ -2,13 +2,13 @@
 <div class="footer">
     <div class="container">
         <h4>Alamat</h4>
-        <p>Mojokerto</p>
+        <p>Padang</p>
 
         <h4>Email</h4>
-        <p>ammarmojur@gmail.com</p>
+        <p>regina.dalimunthe@gmail.com</p>
 
         <h4>No. Hp</h4>
-        <p>081399808859</p>
+        <p>085763132993</p>
         <small>Copyright &copy; 2024 - Warungonline.</small>
     </div>
 </div>

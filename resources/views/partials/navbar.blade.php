@@ -7,6 +7,7 @@
                 @if (auth()->user()->role == 1)
                     <li><a href="{{ route('dashboard') }}">Dashboard</a></li> 
                 @endif
+                <li><a href="{{ route('pesanan', auth()->user()->id) }}">Pesanan</a></li>
                 <li>
                     <a href="">
                     <form action="/logout" method="post">

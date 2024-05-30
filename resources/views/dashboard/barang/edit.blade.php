@@ -25,7 +25,7 @@
                             @if ($barang->image)
                                 <img src="{{ asset('storage/' . $barang->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block" src="" alt="">
                             @else
-                                <img class="d-block" src="https://picsum.photos/300/300" alt="">
+                                <img class="d-block" src="{{ asset('image/shopping.png') }}" alt="">
                             @endif
                             <img class="img-preview img-fluid mb-3 col-sm-5" src="" alt="">
                             <input class="form-control @error('image') is-invalid  @enderror" type="file" id="image" name="image" onchange="previewImage()">

@@ -32,6 +32,12 @@
     <div class="section">
         <div class="container">
             <h3>Buku Terbaru</h3>
+            @if (session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Berhasil!</strong> {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="box">
                 @foreach ($barangs as $barang)
                     <a href="{{ route('detail', $barang) }}">

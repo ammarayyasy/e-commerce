@@ -29,9 +29,9 @@ class PelangganSeeder extends Seeder
             'role' => 2,
         ]);
         Pelanggan::create([
-            'name' => 'Ammar Ayyasy',
-            'email' => 'ammarmojur@gmail.com',
-            'username' => 'ammarayyasy',
+            'name' => 'Regina Valda',
+            'email' => 'regina@gmail.com',
+            'username' => 'regina',
             'password' => Hash::make('123456'),
             'role' => 2,
         ]);

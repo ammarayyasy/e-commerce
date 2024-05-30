@@ -20,4 +20,9 @@ class Barang extends Model
     {
         return $this->hasMany(Transaksi::class, 'id_barang');
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'id_barang');
+    }
 }
