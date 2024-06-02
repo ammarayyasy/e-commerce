@@ -35,6 +35,7 @@ Route::post('/pesanan/{pelanggan}/bayar', [FrontController::class, 'bayar'])->na
 Route::post('/pesanan/{transaksi}/terima', [FrontController::class, 'terima'])->name('pesanan.terima')->middleware('auth');
 Route::post('/pesanan/{transaksi}/review', [FrontController::class, 'review'])->name('pesanan.review')->middleware('auth');
 Route::delete('/pesanan/{transaksi}/hapus', [FrontController::class, 'hapus'])->name('pesanan.hapus')->middleware('auth');
+Route::get('/pesanan/detail/{transaksi}', [FrontController::class, 'show'])->name('pesanan.show')->middleware('auth');
 
 Route::get('/beli/{barang}', [TransaksiController::class, 'index'])->name('beli.index')->middleware('auth');
 Route::post('/beli', [TransaksiController::class, 'store'])->name('beli.store')->middleware('auth');

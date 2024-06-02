@@ -40,9 +40,9 @@ class PelangganController extends Controller
         return redirect('/dashboard/pelanggan')->with('success', 'Data pelanggan berhasil ditambahkan!');
     }
 
-    public function show(string $id)
+    public function show(Pelanggan $pelanggan)
     {
-        //
+        return view('dashboard.pelanggan.show', compact('pelanggan'));
     }
 
     public function edit(Pelanggan $pelanggan)

@@ -42,13 +42,13 @@
                             </td>
                             
                             <td class="d-flex">
-                                <a href="{{ route('pelanggan.edit', $pelanggan->id) }}" style="background-color: aqua" class="btn me-2" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="{{ route('pelanggan.show', $pelanggan->id) }}" style="background-color: aqua" class="btn me-2" href=""><i class="fa-solid fa-eye"></i></a>
+                                <a href="{{ route('pelanggan.edit', $pelanggan->id) }}" style="background-color: yellow" class="btn me-2" href=""><i class="fa-solid fa-pen-to-square"></i></a>
                                 <form action="/dashboard/pelanggan/{{ $pelanggan->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button style="background-color: red" class="btn" onclick="return confirm('Apakah anda yakin?')"><i class="fa-solid fa-trash"></i></i></button>
                                 </form>
-                                
                             </td>
                         </tr>
                         @endforeach

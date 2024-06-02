@@ -117,4 +117,9 @@ class FrontController extends Controller
         return back()->with('success', 'Data transaksi berhasil di hapus!');
     }
 
+    public function show(Transaksi $transaksi)
+    {
+        return view('transaksi.show', compact('transaksi'));
+    }
+
 }

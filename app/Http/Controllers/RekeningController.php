@@ -64,7 +64,7 @@ class RekeningController extends Controller
         {
             $validateData = $request->validate([
                 'id_pelanggan' => 'required',
-                'no_rekening' => 'required|unique:rekenings,no_rekening',
+                'no_rekening' => 'required|unique:rekenings,no_rekening,'.$rekening->id,
                 'saldo' => 'required|numeric',
                 'pin' => 'required',
             ]);

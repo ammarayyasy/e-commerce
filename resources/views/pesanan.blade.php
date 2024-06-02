@@ -56,6 +56,7 @@
                                     @endif
                                 </td>
                                 <td class="d-flex">
+                                    <a href="{{ route('pesanan.show', $transaksi->id) }}" style="background-color: aqua" class="btn me-2" href=""><i class="fa-solid fa-eye"></i></a>
                                     @if($transaksi->status == 1)
                                         <button type="button" style="background-color: #ffc107" class="btn" data-bs-toggle="modal" data-bs-target="#modalBayar{{ $transaksi->id }}">
                                             Bayar

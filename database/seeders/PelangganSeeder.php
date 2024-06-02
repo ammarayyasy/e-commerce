@@ -15,14 +15,14 @@ class PelangganSeeder extends Seeder
     public function run(): void
     {
         Pelanggan::create([
-            'name' => 'Admin Ganteng',
+            'name' => 'Admin Cantik',
             'email' => 'admin@gmail.com',
             'username' => 'admin',
             'password' => Hash::make('123456'),
             'role' => 1,
         ]);
         Pelanggan::create([
-            'name' => 'User Ganteng',
+            'name' => 'User Cantik',
             'email' => 'user@gmail.com',
             'username' => 'user',
             'password' => Hash::make('123456'),
