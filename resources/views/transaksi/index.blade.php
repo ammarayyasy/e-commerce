@@ -73,7 +73,7 @@
     </div>
 
     <script>
-        fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/provinces.json`)
+        fetch(`https://kanglerian.my.id/api-wilayah-indonesia/api/provinces.json`)
         .then(response => response.json())
         .then(provinces => {
             var data = provinces;
@@ -88,7 +88,7 @@
         const selectProvinsi = document.getElementById('provinsi');
         selectProvinsi.addEventListener('change', (e) => {
             var provinsi = e.target.options[e.target.selectedIndex].dataset.reg;
-            fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/regencies/${provinsi}.json`)
+            fetch(`https://kanglerian.my.id/api-wilayah-indonesia/api/regencies/${provinsi}.json`)
             .then(response => response.json())
             .then(regencies => {
                 var data = regencies;
@@ -106,7 +106,7 @@
         const selectKota = document.getElementById('kota');
         selectKota.addEventListener('change', (e) => {
             var kota = e.target.options[e.target.selectedIndex].dataset.dist;
-            fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/districts/${kota}.json`)
+            fetch(`https://kanglerian.my.id/api-wilayah-indonesia/api/districts/${kota}.json`)
             .then(response => response.json())
             .then(districts => {
                 var data = districts;
@@ -123,7 +123,7 @@
         const selectKecamatan = document.getElementById('kecamatan');
         selectKecamatan.addEventListener('change', (e) => {
             var kecamatan = e.target.options[e.target.selectedIndex].dataset.vill;
-            fetch(`https://kanglerian.github.io/api-wilayah-indonesia/api/villages/${kecamatan}.json`)
+            fetch(`https://kanglerian.my.id/api-wilayah-indonesia/api/villages/${kecamatan}.json`)
             .then(response => response.json())
             .then(villages => {
                 var data = villages;
